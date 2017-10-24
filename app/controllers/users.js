@@ -4,7 +4,7 @@ const User = mongoose.model('User');
 
 exports.index = function (req, res) {
   res.setHeader('Content-Type', 'application/json');
-  User.find({}, function(err, users){
+  User.find({}, function(err, users){    
     res.send(users)
   })
 };

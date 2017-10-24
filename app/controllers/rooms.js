@@ -10,11 +10,9 @@ exports.index = function (req, res) {
 };
 
 exports.create = function (req, res) {
-  console.log('something')
   res.setHeader('Content-Type', 'application/json');
   Room.create(req.body, function(err, newRoom){
     if (err) {
-      console.log('erroor inside');
       console.log(err)
     } else {
       res.send(newRoom)
