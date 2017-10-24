@@ -7,6 +7,7 @@ var TalkSchema = new Schema({
   speaker: { type: String, default: ''},
   room: { type: String, default: ''},
   date: { type: String, default: ''},
+  users: { type: Array, default: []}
 });
 
 mongoose.model('Talk', TalkSchema);
