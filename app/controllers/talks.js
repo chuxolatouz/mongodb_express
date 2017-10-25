@@ -19,3 +19,15 @@ exports.create = function (req, res) {
     }
   })
 }
+exports.update = function (req, res) {
+
+  console.log(req.body);
+  console.log(req.params.id);
+  let condition = { _id: req.params.id}
+  Talk.findOne(condition, function(err, talk){
+    talk.users = req.body.users;
+    talk.save()
+    res.send(talk)
+  })
+  res.setHeader('Content-Type', 'application/json');
+}

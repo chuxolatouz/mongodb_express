@@ -18,6 +18,7 @@ module.exports = function (app, passport) {
   app.route('/users').get(users.index).post(users.create)
   app.route('/rooms').get(rooms.index).post(rooms.create)
   app.route('/talks').get(talks.index).post(talks.create)
+  app.route('/talks/:id').put(talks.update)
   /**
    * Error handling
    */
