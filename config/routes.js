@@ -8,6 +8,7 @@ const home = require('../app/controllers/home');
 const users = require('../app/controllers/users')
 const rooms = require('../app/controllers/rooms')
 const talks = require('../app/controllers/talks')
+const login = require('../app/controllers/login')
 /**
  * Expose
  */
@@ -19,6 +20,7 @@ module.exports = function (app, passport) {
   app.route('/rooms').get(rooms.index).post(rooms.create)
   app.route('/talks').get(talks.index).post(talks.create)
   app.route('/talks/:id').put(talks.update)
+  app.route('/login').post(passport.authenticate('local'),login.create)
   /**
    * Error handling
    */
